@@ -2047,8 +2047,8 @@ class enrol_lmb_plugin extends enrol_plugin {
                                 && ($collisionid = $DB->get_field('user', 'id', array('username' => $moodleuser->username)))) {
                             $logline .= 'username collision while trying to update:';
                             $status = false;
-                        } else {
-                            if ($DB->update_record('user', $moodleuser)) {
+                        } //else {
+                          /*  if ($DB->update_record('user', $moodleuser)) {
                                 $logline .= 'updated user:';
                                 // Update custom fields.
                                 if ($this->get_config('customfield1mapping')) {
@@ -2059,7 +2059,7 @@ class enrol_lmb_plugin extends enrol_plugin {
                                 $logline .= 'failed to update user:';
                                 $status = false;
                             }
-                        }
+                        } */
                     } else {
                         $logline .= 'no changes to make:';
                     }
